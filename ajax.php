@@ -29,7 +29,83 @@
    if ($action == "net_wifi_bssid")
    {
       echo "<script language='javascript'>location.href='net_wifi_setting.php';</script>\n";
-   }  
+   }
+   else
+   if ($action == "tag_init_net_bridge_nat_mode.php")
+   {
+      echo "2;2;0.0.0.0;0.0.0.0;0.0.0.0;10.1.1.254;255.255.255.0;1500;1400;1,0.0.0.0 1,0.0.0.0 1,0.0.0.0\n";
+   }
+   else
+   if ($action == "tag_init_net_firewall.php")
+   {
+      echo "0.0.0.0;@1,Y,100.0.0.0/8,22456,10.1.1.0/24,22555,2,1;1;1\n";
+   }
+   else
+   if ($action == "tag_init_net_dhcp.php")
+   {
+      echo "1;10.1.1.100;10.1.1.199;1440;1,0.0.0.0 1,0.0.0.0 1,0.0.0.0;\n";
+   }
+   else
+   if ($action == "tag_init_net_alg.php")
+   {
+      echo "1;1;1;0\n";
+   }
+   else
+   if ($action == "tag_init_net_port_forwarding.php")
+   {
+      echo "@1,N,t1,0,200-201,300-301,10.1.1.50\n";
+   }
+   else
+   if ($action == "tag_init_net_port_trigger.php")
+   {
+      echo "@1,Y,IRC,0,6667-7000,0,113-113\n";
+   }
+   else
+   if ($action == "tag_init_net_ddns.php")
+   {
+      echo "0;0;0;;;;\n";
+   }
+   else
+   if ($action == "tag_init_net_upnp.php")
+   {
+      echo "0;0\n";
+   }   
+   else
+   if ($action == "tag_init_manage_tr069.php")
+   {
+      echo "1;http://10.1.1.69:8080/ftacs-basic/ACS;tr069;tr069;1;86400;dps;dps;1;1\n";
+   }
+   else
+   if ($action == "tag_init_manage_omadm.php")
+   {
+      echo "0;;;NONE;;;NONE;;;1;3600\n";
+   }
+   else
+   if ($action == "tag_init_manage_snmp.php")
+   {
+      echo "0;;;public;private\n";
+   }
+   else
+   if ($action == "tag_LogMsg")
+   {
+      echo "Feb  6 00:41:23 mt71x9 daemon.info [WMXD]: WiMAX device state transition from READY to SCANNING\n"; 
+      echo "Feb  6 00:41:24 mt71x9 daemon.info [WMXD]: WiMAX device state transition from SCANNING to READY\n"; 
+      echo "Feb  6 00:41:54 mt71x9 daemon.info [WMXD]: WiMAX device state transition from READY to SCANNING\n"; 
+   }
+   else
+   if ($action == "tag_ipPing")
+   {
+      echo "PING 10.1.1.3 (10.1.1.3) 56(84) bytes of data.\n"; 
+      echo "From 10.1.1.254 icmp_seq=2 Destination Host Unreachable\n"; 
+      echo "From 10.1.1.254 icmp_seq=3 Destination Host Unreachable\n"; 
+      echo "From 10.1.1.254 icmp_seq=4 Destination Host Unreachable\n"; 
+      echo "\n"; 
+      echo "--- 10.1.1.3 ping statistics ---\n"; 
+      echo "4 packets transmitted, 0 received, +3 errors, 100% packet loss, time 3000ms\n"; 
+      echo ", pipe 3\n"; 
+      echo "\n";
+   }
+   
    else
    {
        echo "0;\n";
